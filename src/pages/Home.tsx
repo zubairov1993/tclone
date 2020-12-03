@@ -8,6 +8,7 @@ import {
   InputBase,
   makeStyles,
   Paper,
+  Theme,
   Typography,
   withStyles,
 } from "@material-ui/core";
@@ -19,9 +20,9 @@ import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
 import ListAltIcon from "@material-ui/icons/ListAlt";
 import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
-import CommentIcon from "@material-ui/icons/ChatBubbleOutline";
+import { Tweet } from "../components/ModalBlock/Tweet";
 
-const useHomeStyles = makeStyles(() => ({
+export const useHomeStyles = makeStyles((theme: Theme) => ({
   wrapper: {
     height: "100vh",
   },
@@ -65,7 +66,24 @@ const useHomeStyles = makeStyles(() => ({
       fontWeight: 800,
     },
   },
-  tweetsUserName: {
+  tweet: {
+    cursor: "pointer",
+    paddingTop: 15,
+    paddingLeft: 20,
+    "&:hover": {
+      backgroundColor: "rgb(245, 248, 250)",
+    },
+  },
+  tweetAvatar: {
+    width: theme.spacing(5),
+    height: theme.spacing(5),
+  },
+  tweetFooter: {
+    display: "flex",
+    justifyContent: "space-between",
+    width: 450,
+  },
+  tweetUserName: {
     color: grey[500],
   },
 }));
@@ -175,34 +193,18 @@ export const Home = () => {
             <Paper className={classes.tweetsHeader} variant="outlined">
               <Typography variant="h6">Главная</Typography>
             </Paper>
-            <Paper className={classes.tweetsHeader} variant="outlined">
-              <Grid container spacing={3}>
-                <Grid item xs={1}>
-                  <Avatar
-                    alt="User Avatar"
-                    src="https://images.unsplash.com/photo-1606827728563-d08486ce78c3?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                  />
-                </Grid>
-                <Grid item xs={11}>
-                  <Typography>
-                    <b>Жуль верн</b>{" "}
-                    <span className={classes.tweetsUserName}>@жи-есть</span>
-                  </Typography>
-                  <Typography variant="body1" gutterBottom>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Commodi, eligendi temporibus. Nam labore, neque nesciunt
-                    facere quos sapiente, asperiores repellendus, nobis iure
-                    quam minus architecto tempore vitae quidem molestiae libero!
-                  </Typography>
-                  <div>
-                    <IconButton>
-                      <CommentIcon style={{ fontSize: 16 }} />
-                      <span style={{ fontSize: 14 }}>1</span>
-                    </IconButton>
-                  </div>
-                </Grid>
-              </Grid>
-            </Paper>
+            <Tweet
+              text={
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo aspernatur corporis commodi, neque facere dolor ipsum incidunt unde veritatis natus exercitationem ducimus excepturi quas non vero, odit rem culpa ab!"
+              }
+              user={{
+                fullname: "ara",
+                username: "sss",
+                avatarUrl:
+                  "https://images.unsplash.com/photo-1606942790567-5783bab8d944?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+              }}
+              classes={classes}
+            />
           </Paper>
         </Grid>
         <Grid item xs={3}>
