@@ -6,7 +6,7 @@ import CommentIcon from "@material-ui/icons/ChatBubbleOutline";
 import RepeatIcon from "@material-ui/icons/Repeat";
 import LikeIcon from "@material-ui/icons/FavoriteBorder";
 import ShareIcon from "@material-ui/icons/UndoOutlined";
-import { useHomeStyles } from "../../../pages/Home";
+import { useHomeStyles } from "../pages/Home";
 
 interface TweetProps {
   text: string;
@@ -48,23 +48,23 @@ export const Tweet: React.FC<TweetProps> = ({
           </Typography>
           <div className={classes.tweetFooter}>
             <div>
-              <IconButton color="primary">
+              <IconButton>
                 <CommentIcon style={{ fontSize: 20 }} />
               </IconButton>
               <span>1</span>
             </div>
             <div>
-              <IconButton color="primary">
+              <IconButton>
                 <RepeatIcon style={{ fontSize: 20 }} />
               </IconButton>
             </div>
             <div>
-              <IconButton color="primary">
+              <IconButton>
                 <LikeIcon style={{ fontSize: 20 }} />
               </IconButton>
             </div>
             <div>
-              <IconButton color="primary">
+              <IconButton>
                 <ShareIcon style={{ fontSize: 20 }} />
               </IconButton>
             </div>
