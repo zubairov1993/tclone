@@ -1,14 +1,14 @@
-import React from 'react';
-import {SignIn} from './pages/SignIn';
-import { Route, Switch } from 'react-router-dom';
-import { Home } from './pages/Home';
+import React from "react";
+import { SignIn } from "./pages/SignIn";
+import { Route, Switch } from "react-router-dom";
+import { Home } from "./pages/Home";
 
 function App() {
   return (
     <div className="App">
       <Switch>
-        <Route path='/signin' component={SignIn} />
-        <Route path='/' component={Home} />
+        <Route path="/signin" component={SignIn} />
+        <Route path="/" component={Home} />
       </Switch>
     </div>
   );
